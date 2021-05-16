@@ -1,0 +1,39 @@
+// Fonts
+@font-face {
+  font-family: "Cooper BT";
+  src: url("../fonts/Cooper-Light-BT.ttf");
+}
+
+@font-face {
+  font-family: "GT Eesti Pro";
+  font-weight: 200;
+  src: url("../fonts/GTEestiProDisplay-Light.ttf");
+}
+
+@font-face {
+  font-family: "GT Eesti Pro";
+  font-weight: 400;
+  src: url("../fonts/GTEestiProDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: "GT Eesti Pro";
+  font-weight: 600;
+  src: url("../fonts/GTEestiProDisplay-Medium.ttf");
+}
+
+@font-face {
+  font-family: "GT Eesti Pro";
+  font-weight: 800;
+  src: url("../fonts/GTEestiProDisplay-Bold.ttf");
+}
+
+body {
+  font-family: "GT Eesti Pro", sans-serif;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
