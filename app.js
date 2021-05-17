@@ -7,12 +7,33 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // listen for requests
-app.listen(8080);
+let port = 8080;
+app.listen(port);
+console.log(`Server live at port ${port} ...`);
 
 // middleware & static files
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
-app.get('/',(req,res)=>{
-    console.log('Request received!');
-    res.render('index');
+// List of tabs
+let pages = [
+    ['agent-info'],
+    ['disclaimer'],
+    ['about-you'],
+    ['dependants'],
+    ['networth'],
+    ['cashflow'],
+    ['risk-preference'],
+    ['financial-needs'],
+    ['financial-analysis'],
+    [
+        'timeline/projection',
+        'timeline/goals',
+        'timeline/charts'
+    ]
+]
+// Routing
+pages.forEach((currentPage, index, pages) => {
+    app.get(`/${currentPage}`, (req, res) => {
+        res.render('index', { currentPage, clientName: "Amirrul Kasmirhan", pages });
+    });
 });

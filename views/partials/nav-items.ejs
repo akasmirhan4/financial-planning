@@ -1,0 +1,29 @@
+<nav>
+  <%
+  pages.forEach(checkPage => {
+    if (checkPage.length>1) {
+      let root = checkPage[0].split("/")[0];
+      console.log(root);
+  %>
+      <div class="nav-group <%= checkPage[0] %> ">
+      <%= root %>
+      <div class="nav-group-items">
+      <%
+      checkPage.forEach(subPage => {
+        let page = subPage.split("/")[1];
+        let title = page.replace("-", " ");
+      %>
+        <a href= <%= subPage %>  class="nav-item <%= page %><% if (page == subPage) { %>active<% } %>"><%= title %> </a>
+      <%
+      });
+    }
+    else {
+      let title = checkPage[0].replace("-", " ");
+      %>
+      <a
+        href="/<%=checkPage%>"
+        class="nav-item <%=checkPage%> <% if (currentPage == checkPage) { %>active<% } %>"
+        ><%=title%>
+      </a>
+  <% } %>
+<% }); %>
