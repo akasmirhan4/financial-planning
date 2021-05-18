@@ -44,8 +44,8 @@
   --chart-color-3: #6c5b47;
   --chart-color-4: #f3c018;
 
-  --chart-thickness: 80px;
-  --main-width: clamp(20em, 80vw, 70em);
+  --p-width: clamp(45ch, 80vw, 75ch);
+  --main-width: clamp(60ch, 80vw, 120ch);
 }
 
 body {
@@ -58,8 +58,13 @@ body {
   overflow-x: hidden;
 }
 
-*{
+* {
   transition: 0.05s ease-out all;
+}
+
+p {
+  margin: auto;
+  width: var(--p-width);
 }
 
 button {
@@ -125,6 +130,10 @@ input[type="radio"] {
 
 .topbar .right-col {
   display: flex;
+}
+
+.topbar .nav-group{
+  z-index: 1;
 }
 
 .page-title {
@@ -220,6 +229,10 @@ tr {
   height: 2em;
 }
 
+tbody tr:hover *{
+  background-color: var(--editable-color) !important;
+}
+
 tr > * {
   padding: 0.2em 1em;
 }
@@ -264,6 +277,7 @@ tbody tr:nth-child(even) td {
 }
 
 .notice {
+  width: unset;
   background-color: var(--editable-color);
 }
 
@@ -271,31 +285,13 @@ tbody tr:nth-child(even) td {
 .summary {
   display: flex;
   justify-content: space-between;
+  margin: 2em auto;
 }
 .summary-table {
   width: 50%;
 }
-.summary-chart .inner {
-  position: absolute;
-  background-color: white;
-  border-radius: 100%;
-  width: calc(100% - var(--chart-thickness));
-  height: calc(100% - var(--chart-thickness));
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.summary-chart {
-  position: relative;
-  margin: 2em 4em;
-  width: clamp(10em, 50vw, 20em);
-  height: clamp(10em, 50vw, 20em);
-  border-radius: 100%;
-  background: var(--chart-color-1);
+.summary-chart{
+  width: 40%;
 }
 
 .breakdown {
@@ -310,6 +306,7 @@ tbody tr:nth-child(even) td {
   margin: 0 auto;
   width: var(--main-width);
 }
+
 
 .networth.breakdown .inner {
   grid:
@@ -339,6 +336,7 @@ tbody tr:nth-child(even) td {
   text-align: left;
 }
 .desc p {
+  width: unset;
   border: 1px solid var(--border-color);
   padding: 2em 4em;
 }
@@ -348,10 +346,12 @@ tbody tr:nth-child(even) td {
 }
 
 // Financial Needs
-.timeline h3, .goals h3{
+.timeline h3,
+.goals h3,
+.priority h3 {
   text-align: left;
 }
-.timeline .inner{
+.timeline .inner {
   position: relative;
   padding: 4em 0;
 }
@@ -359,19 +359,19 @@ tbody tr:nth-child(even) td {
   border: 2px solid var(--font-color);
   border-radius: 4px;
 }
-.milestone{
+.milestone {
   padding: 1em;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height:100%;
+  height: 100%;
   top: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
 }
-.milestone .dot{
+.milestone .dot {
   width: 1em;
   height: 1em;
   background-color: var(--font-color);
@@ -393,6 +393,26 @@ tbody tr:nth-child(even) td {
   left: 100%;
 }
 
-.milestone:hover{
+.milestone:hover {
   font-size: 1.5rem;
+}
+
+//Analysis
+tr.ratio:hover + .desc, tr.desc:hover{
+  
+}
+tr.desc{
+  display: none;
+}
+
+// Custom class
+.text-center {
+  text-align: center !important;
+}
+
+#bug-svg{
+  fill: var(--font-color);
+  margin: 4em auto 0em;
+  display: block;
+  width:10vw;
 }

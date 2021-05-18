@@ -42,8 +42,8 @@
   --chart-color-2: #a3917d;
   --chart-color-3: #6c5b47;
   --chart-color-4: #f3c018;
-  --chart-thickness: 80px;
-  --main-width: clamp(20em, 80vw, 70em);
+  --p-width: clamp(45ch, 80vw, 75ch);
+  --main-width: clamp(60ch, 80vw, 120ch);
 }
 
 body {
@@ -59,6 +59,11 @@ body {
 * {
   -webkit-transition: 0.05s ease-out all;
   transition: 0.05s ease-out all;
+}
+
+p {
+  margin: auto;
+  width: var(--p-width);
 }
 
 button {
@@ -128,6 +133,10 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.topbar .nav-group {
+  z-index: 1;
 }
 
 .page-title {
@@ -239,6 +248,10 @@ tr {
   height: 2em;
 }
 
+tbody tr:hover * {
+  background-color: var(--editable-color) !important;
+}
+
 tr > * {
   padding: 0.2em 1em;
 }
@@ -282,6 +295,7 @@ tbody tr:nth-child(even) td {
 }
 
 .notice {
+  width: unset;
   background-color: var(--editable-color);
 }
 
@@ -292,40 +306,15 @@ tbody tr:nth-child(even) td {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 2em auto;
 }
 
 .summary-table {
   width: 50%;
 }
 
-.summary-chart .inner {
-  position: absolute;
-  background-color: white;
-  border-radius: 100%;
-  width: calc(100% - var(--chart-thickness));
-  height: calc(100% - var(--chart-thickness));
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .summary-chart {
-  position: relative;
-  margin: 2em 4em;
-  width: clamp(10em, 50vw, 20em);
-  height: clamp(10em, 50vw, 20em);
-  border-radius: 100%;
-  background: var(--chart-color-1);
+  width: 40%;
 }
 
 .breakdown {
@@ -372,6 +361,7 @@ tbody tr:nth-child(even) td {
 }
 
 .desc p {
+  width: unset;
   border: 1px solid var(--border-color);
   padding: 2em 4em;
 }
@@ -380,7 +370,9 @@ tbody tr:nth-child(even) td {
   margin: 0 0 4em;
 }
 
-.timeline h3, .goals h3 {
+.timeline h3,
+.goals h3,
+.priority h3 {
   text-align: left;
 }
 
@@ -440,5 +432,20 @@ tbody tr:nth-child(even) td {
 
 .milestone:hover {
   font-size: 1.5rem;
+}
+
+tr.desc {
+  display: none;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+#bug-svg {
+  fill: var(--font-color);
+  margin: 4em auto 0em;
+  display: block;
+  width: 10vw;
 }
 /*# sourceMappingURL=style.css.map */

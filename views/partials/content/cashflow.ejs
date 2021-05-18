@@ -8,19 +8,19 @@
       </thead>
       <tr>
         <th>Liabilities</th>
-        <th>$0.00</th>
+        <th id="total-liabilities">$200.00</th>
       </tr>
       <tr>
         <th>Expenses / Needs</th>
-        <th>$0.00</th>
+        <th id="total-expenses">$400.00</th>
       </tr>
       <tr>
         <th>Savings / Wants</th>
-        <th>$0.00</th>
+        <th id="total-savings">$200.00</th>
       </tr>
       <tr>
         <th>Investments / Protection</th>
-        <th>$0.00</th>
+        <th id="total-investments">$100.00</th>
       </tr>
       <tfoot>
         <tr>
@@ -38,9 +38,7 @@
     </table>
   </div>
   <div class="right-col summary-chart">
-    <div class="inner">
-      <p>Your Cashflow Distribution</p>
-    </div>
+    <canvas id="cashflow-chart"></canvas>
   </div>
 </div>
 <div class="bottom cashflow breakdown">
@@ -184,3 +182,4 @@
     </div>
   </div>
 </div>
+<script src="./js/cashflow-chart.js"></script>

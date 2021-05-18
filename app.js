@@ -7,7 +7,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // listen for requests
-let port = 8080;
+let port = 80;
 app.listen(port);
 console.log(`Server live at port ${port} ...`);
 
@@ -36,4 +36,14 @@ pages.forEach((currentPage, index, pages) => {
     app.get(`/${currentPage}`, (req, res) => {
         res.render('index', { currentPage, clientName: "Amirrul Kasmirhan", pages });
     });
+});
+
+//Redirect
+app.get('/',(req,res)=>{
+    res.redirect('/agent-info');
+});
+
+// 404
+app.use((req,res)=>{
+    res.render('404', {currentPage: ['404 | Webpath Not Found'], clientName: "Amirrul Kasmirhan", pages} );
 });

@@ -9,15 +9,15 @@
       <tbody>
       <tr>
         <th>Personal Assets</th>
-        <th>$0.00</th>
+        <th id="total-personal-assets">$20.00</th>
       </tr>
       <tr>
         <th>Invested Assets</th>
-        <th>$0.00</th>
+        <th id="total-invested-assets">$50.00</th>
       </tr>
       <tr>
         <th>Cash Equivalents</th>
-        <th>$0.00</th>
+        <th id="total-cash-equivalents">$10.00</th>
       </tr>
       <tfoot>
         <tr>
@@ -37,9 +37,7 @@
     </table>
   </div>
   <div class="right-col summary-chart">
-    <div class="inner">
-      <p>Your Asset Distribution</p>
-    </div>
+      <canvas id="networth-chart"></canvas>
   </div>
 </div>
 <div class="bottom networth breakdown">
@@ -162,3 +160,4 @@
     </div>
   </div>
 </div>
+<script src="./js/networth-chart.js"></script>
