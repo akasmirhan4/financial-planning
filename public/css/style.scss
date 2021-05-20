@@ -67,6 +67,17 @@ p {
   width: var(--p-width);
 }
 
+select {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
 button {
   cursor: pointer;
   background-color: unset;
@@ -103,13 +114,43 @@ h3 {
 }
 
 input[type="radio"] {
-  //
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+label {
+  display: block;
+  width: 3em;
+  height: 3em;
+  padding: 1em;
+  cursor: pointer;
+  margin: auto;
+
+  &:hover {
+    background-color: var(--alt-color);
+  }
 }
 
+tbody td:hover .radio {
+  background-color: var(--header-color);
+}
+
+.radio {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
 .radio-container {
+  padding: 0;
   text-align: center;
   width: 1em;
   cursor: pointer;
+
+  input[type="radio"]:checked + .radio {
+    background-color: var(--font-color);
+  }
 }
 
 /* Top-bar */
@@ -132,7 +173,7 @@ input[type="radio"] {
   display: flex;
 }
 
-.topbar .nav-group{
+.topbar .nav-group {
   z-index: 1;
 }
 
@@ -229,7 +270,7 @@ tr {
   height: 2em;
 }
 
-tbody tr:hover *{
+tbody td:hover:not(.radio-container) {
   background-color: var(--editable-color) !important;
 }
 
@@ -290,7 +331,7 @@ tbody tr:nth-child(even) td {
 .summary-table {
   width: 50%;
 }
-.summary-chart{
+.summary-chart {
   width: 40%;
 }
 
@@ -306,7 +347,6 @@ tbody tr:nth-child(even) td {
   margin: 0 auto;
   width: var(--main-width);
 }
-
 
 .networth.breakdown .inner {
   grid:
@@ -343,6 +383,19 @@ tbody tr:nth-child(even) td {
 
 .questionnaire table {
   margin: 0 0 4em;
+}
+
+.chosen td:hover select {
+  background-color: var(--editable-color);
+}
+
+.chosen td {
+  padding: 0;
+}
+
+option {
+  background-color: white;
+  width: 100%;
 }
 
 // Financial Needs
@@ -382,10 +435,7 @@ tbody tr:nth-child(even) td {
   line-height: 1em;
   margin: 0.4em 0;
 }
-.milestone .label {
-}
-.milestone .age {
-}
+
 .milestone:first-of-type {
   left: 0%;
 }
@@ -398,10 +448,7 @@ tbody tr:nth-child(even) td {
 }
 
 //Analysis
-tr.ratio:hover + .desc, tr.desc:hover{
-  
-}
-tr.desc{
+tr.desc {
   display: none;
 }
 
@@ -410,9 +457,9 @@ tr.desc{
   text-align: center !important;
 }
 
-#bug-svg{
+#bug-svg {
   fill: var(--font-color);
   margin: 4em auto 0em;
   display: block;
-  width:10vw;
+  width: 10vw;
 }

@@ -50,12 +50,14 @@
           <th>Category</th>
           <th>Amount</th>
         </thead>
+        <% data.cashflow.income.forEach(income => { %>
+          <tr>
+            <th><%= income.category %> </th>
+            <td><%= income.amount %></td>
+          </tr>
+        <% }) %>
         <tr>
-          <th>Employment</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Bonus</th>
+          <th></th>
           <td></td>
         </tr>
         <tfoot>
@@ -71,36 +73,14 @@
           <th>Category</th>
           <th>Amount</th>
         </thead>
+        <% data.cashflow.expenses.forEach(expense => { %>
+          <tr>
+            <th><%= expense.category %> </th>
+            <td><%= expense.amount %></td>
+          </tr>
+        <% }) %>
         <tr>
-          <th>Groceries</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Shopping</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Restaurant</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Entertainment</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Subscription</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Charity</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Utilities</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Transport</th>
+          <th></th>
           <td></td>
         </tr>
         <tfoot>
@@ -116,20 +96,13 @@
           <th>Category</th>
           <th>Amount</th>
         </thead>
-        <tr>
-          <th>Emergency Fund</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Future Goal</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Travel</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Shopping</th>
+        <% data.cashflow.savings.forEach(saving => { %>
+          <tr>
+            <th><%= saving.category %> </th>
+            <td><%= saving.amount %></td>
+          </tr>
+        <% }) %>
+          <th></th>
           <td></td>
         </tr>
         <tfoot>
@@ -145,12 +118,13 @@
           <th>Category</th>
           <th>Amount</th>
         </thead>
-        <tr>
-          <th>Insurance</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Investment</th>
+        <% data.cashflow.investments.forEach(investment => { %>
+          <tr>
+            <th><%= investment.category %> </th>
+            <td><%= investment.amount %></td>
+          </tr>
+        <% }) %>
+          <th></th>
           <td></td>
         </tr>
         <tfoot>
@@ -166,12 +140,13 @@
           <th>Category</th>
           <th>Amount</th>
         </thead>
-        <tr>
-          <th>Personal / Credit</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Mtr Vehicles</th>
+        <% data.cashflow.liabilities.forEach(liability => { %>
+          <tr>
+            <th><%= liability.category %> </th>
+            <td><%= liability.amount %></td>
+          </tr>
+        <% }) %>
+          <th></th>
           <td></td>
         </tr>
         <tfoot>

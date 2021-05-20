@@ -2,27 +2,30 @@
   <table class="chosen">
     <tr>
       <th>Your chosen risk preference</th>
-      <td>Risk Adverse</td>
+      <td>
+        <select name="chosen">
+          <option value="Risk Averse">Risk Averse</option>
+          <option value="Cautions">Cautions</option>
+          <option value="Balanced">Balanced</option>
+          <option value="Adventurous">Adventurous</option>
+        </select>
+      </td>
     </tr>
   </table>
   <table class="result">
     <tr>
       <th>Total Risk Preference Score</th>
-      <td>16</td>
+      <td id="risk-score"></td>
     </tr>
     <tr>
       <th>Your Matching Risk Preference</th>
-      <td>Risk Adverse</td>
+      <td id="risk-score-category"></td>
     </tr>
   </table>
 </div>
 <div class="desc">
   <h3>risk preference description</h3>
-  <p>
-    You are conservative in your investments and prefer low risk product. You
-    are not willing to accept some short term fluctuations in the value of your
-    investments.
-  </p>
+  <p>Fill in the questionnaire to get your result (~ 5-10 mins).</p>
 </div>
 <div class="questionnaire">
   <table id="q1">
@@ -39,7 +42,10 @@
           and a car, but you also want to save some money.
         </td>
         <td class="radio-container">
-          <input type="radio" name="q1" value="5" />
+          <label>
+            <input type="radio" name="q1" value="5" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
@@ -48,7 +54,10 @@
           to accumulate wealth for the future.
         </td>
         <td class="radio-container">
-          <input type="radio" name="q1" value="4" />
+          <label>
+            <input type="radio" name="q1" value="4" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
@@ -57,7 +66,10 @@
           may want to start a family.
         </td>
         <td class="radio-container">
-          <input type="radio" name="q1" value="3" />
+          <label>
+            <input type="radio" name="q1" value="3" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
@@ -67,7 +79,10 @@
           thinking of starting your retirement nest egg.
         </td>
         <td class="radio-container">
-          <input type="radio" name="q1" value="5" />
+          <label>
+            <input type="radio" name="q1" value="5" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
@@ -77,7 +92,10 @@
           to.
         </td>
         <td class="radio-container">
-          <input type="radio" name="q1" value="2" />
+          <label>
+            <input type="radio" name="q1" value="2" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
@@ -85,8 +103,12 @@
           You have retired, and rely on existing savings and investments to
           maintain your current lifestyle.
         </td>
+
         <td class="radio-container">
-          <input type="radio" name="q1" value="1" />
+          <label>
+            <input type="radio" name="q1" value="1" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
     </tbody>
@@ -103,31 +125,46 @@
       <tr>
         <td>A return without losing any capital</td>
         <td class="radio-container">
-          <input type="radio" name="q2" value="1" />
+          <label>
+            <input type="radio" name="q2" value="1" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Current inflation rate plus 1-2% pa</td>
         <td class="radio-container">
-          <input type="radio" name="q2" value="2" />
+          <label>
+            <input type="radio" name="q2" value="2" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Current inflation rate plus 3-4% pa</td>
         <td class="radio-container">
-          <input type="radio" name="q2" value="3" />
+          <label>
+            <input type="radio" name="q2" value="3" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Current inflation rate plus 5-6% pa</td>
         <td class="radio-container">
-          <input type="radio" name="q2" value="4" />
+          <label>
+            <input type="radio" name="q2" value="4" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Current inflation rate plus more than 6% pa</td>
         <td class="radio-container">
-          <input type="radio" name="q2" value="5" />
+          <label>
+            <input type="radio" name="q2" value="5" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
     </tbody>
@@ -145,77 +182,108 @@
       <tr>
         <td>You would cash in if there were any loss in value</td>
         <td class="radio-container">
-          <input type="radio" name="q3" value="0" />
+          <label>
+            <input type="radio" name="q3" value="0" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Up to 6 months</td>
         <td class="radio-container">
-          <input type="radio" name="q3" value="1" />
+          <label>
+            <input type="radio" name="q3" value="1" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Up to 1 year</td>
         <td class="radio-container">
-          <input type="radio" name="q3" value="2" />
+          <label>
+            <input type="radio" name="q3" value="2" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Up to 3 year</td>
         <td class="radio-container">
-          <input type="radio" name="q3" value="3" />
+          <label>
+            <input type="radio" name="q3" value="3" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Up to 5 year</td>
         <td class="radio-container">
-          <input type="radio" name="q3" value="4" />
+          <label>
+            <input type="radio" name="q3" value="4" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>More than 5 year</td>
         <td class="radio-container">
-          <input type="radio" name="q3" value="5" />
+          <label>
+            <input type="radio" name="q3" value="5" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
     </tbody>
   </table>
   <table id="q4">
     <thead>
-      <th>
-        4. How familiar are you with investment markets?
-      </th>
+      <th>4. How familiar are you with investment markets?</th>
       <th>Answer</th>
     </thead>
     <tbody>
       <tr>
         <td>Not familiar at all</td>
         <td class="radio-container">
-          <input type="radio" name="q4" value="1" />
+          <label>
+            <input type="radio" name="q4" value="1" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Not very familiar</td>
         <td class="radio-container">
-          <input type="radio" name="q4" value="2" />
+          <label>
+            <input type="radio" name="q4" value="2" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Somewhat familiar</td>
         <td class="radio-container">
-          <input type="radio" name="q4" value="3" />
+          <label>
+            <input type="radio" name="q4" value="3" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Moderately familiar</td>
         <td class="radio-container">
-          <input type="radio" name="q4" value="4" />
+          <label>
+            <input type="radio" name="q4" value="4" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Very familiar</td>
         <td class="radio-container">
-          <input type="radio" name="q4" value="5" />
+          <label>
+            <input type="radio" name="q4" value="5" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
     </tbody>
@@ -223,7 +291,8 @@
   <table id="q5">
     <thead>
       <th>
-        5. Which of the following best describes your preference when considering returns from investments?
+        5. Which of the following best describes your preference when
+        considering returns from investments?
       </th>
       <th>Answer</th>
     </thead>
@@ -231,31 +300,46 @@
       <tr>
         <td>Preservation of capital is more important than returns</td>
         <td class="radio-container">
-          <input type="radio" name="q5" value="1" />
+          <label>
+            <input type="radio" name="q5" value="1" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Stable, reliable returns</td>
         <td class="radio-container">
-          <input type="radio" name="q5" value="2" />
+          <label>
+            <input type="radio" name="q5" value="2" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Some variability in returns</td>
         <td class="radio-container">
-          <input type="radio" name="q5" value="3" />
+          <label>
+            <input type="radio" name="q5" value="3" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Moderate variability in returns</td>
         <td class="radio-container">
-          <input type="radio" name="q5" value="4" />
+          <label>
+            <input type="radio" name="q5" value="4" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>High variability but potentially higher returns</td>
         <td class="radio-container">
-          <input type="radio" name="q5" value="5" />
+          <label>
+            <input type="radio" name="q5" value="5" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
     </tbody>
@@ -263,40 +347,69 @@
   <table id="q6">
     <thead>
       <th>
-        6. Which of the following best describes you if 6 months after placing your investments you discover that, in line with what is happening in the financial markets generally, your portfolio has decreased in value by 20%?
+        6. Which of the following best describes you if 6 months after placing
+        your investments you discover that, in line with what is happening in
+        the financial markets generally, your portfolio has decreased in value
+        by 20%?
       </th>
       <th>Answer</th>
     </thead>
     <tbody>
       <tr>
-        <td>Security of your invested money is critical and you cash out immediately.</td>
+        <td>
+          Security of your invested money is critical and you cash out
+          immediately.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q6" value="1" />
+          <label>
+            <input type="radio" name="q6" value="1" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
-      <tr>
-        <td>You would cut your losses and transfer your money to safer investments.</td>
+        <td>
+          You would cut your losses and transfer your money to safer
+          investments.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q6" value="2" />
+          <label>
+            <input type="radio" name="q6" value="2" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
-        <td>You would be concerned but would wait to see if the investments improve.</td>
+        <td>
+          You would be concerned but would wait to see if the investments
+          improve.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q6" value="3" />
+          <label>
+            <input type="radio" name="q6" value="3" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
-        <td>You knew there was risk involved and you would leave the investments in place, hoping performance would improve.</td>
+        <td>
+          You knew there was risk involved and you would leave the investments
+          in place, hoping performance would improve.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q6" value="4" />
+          <label>
+            <input type="radio" name="q6" value="4" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>This would not bother you at all.</td>
         <td class="radio-container">
-          <input type="radio" name="q6" value="5" />
+          <label>
+            <input type="radio" name="q6" value="5" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
     </tbody>
@@ -310,39 +423,75 @@
     </thead>
     <tbody>
       <tr>
-        <td>You want to invest for longer than 5 years and would want to accumulate as much as possible.</td>
+        <td>
+          You want to invest for longer than 5 years and would want to
+          accumulate as much as possible.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q7" value="5" />
+          <label>
+            <input type="radio" name="q7" value="5" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
-        <td>You are not nearing retirement, have surplus funds to invest and you are aiming to accumulate long term wealth from your investments.</td>
+        <td>
+          You are not nearing retirement, have surplus funds to invest and you
+          are aiming to accumulate long term wealth from your investments.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q7" value="4" />
+          <label>
+            <input type="radio" name="q7" value="4" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
-        <td>You have a lump sum (e.g. inheritance) and you are uncertain about what investment alternatives are available.</td>
+        <td>
+          You have a lump sum (e.g. inheritance) and you are uncertain about
+          what investment alternatives are available.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q7" value="3" />
+          <label>
+            <input type="radio" name="q7" value="3" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
-        <td>You are nearing retirement and you are investing to ensure you have sufficient funds available to enjoy your retirement.</td>
+        <td>
+          You are nearing retirement and you are investing to ensure you have
+          sufficient funds available to enjoy your retirement.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q7" value="2" />
+          <label>
+            <input type="radio" name="q7" value="2" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
-        <td>You have some specific financial goals to meet within the next 5 years.</td>
+        <td>
+          You have some specific financial goals to meet within the next 5
+          years.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q7" value="2" />
+          <label>
+            <input type="radio" name="q7" value="2" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
-        <td>You want a fixed income stream and/or you want to totally protect your savings.</td>
+        <td>
+          You want a fixed income stream and/or you want to totally protect your
+          savings.
+        </td>
         <td class="radio-container">
-          <input type="radio" name="q7" value="1" />
+          <label>
+            <input type="radio" name="q7" value="1" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
     </tbody>
@@ -350,7 +499,9 @@
   <table id="q8">
     <thead>
       <th>
-        8. Assume you have made plans to meet short-term financial goals and to handle emergencies, how long would you keep your money invested before you would need to access it?
+        8. Assume you have made plans to meet short-term financial goals and to
+        handle emergencies, how long would you keep your money invested before
+        you would need to access it?
       </th>
       <th>Answer</th>
     </thead>
@@ -358,33 +509,111 @@
       <tr>
         <td>Less than 2 years</td>
         <td class="radio-container">
-          <input type="radio" name="q8" value="1" />
+          <label>
+            <input type="radio" name="q8" value="1" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Between 2-3 years</td>
         <td class="radio-container">
-          <input type="radio" name="q8" value="2" />
+          <label>
+            <input type="radio" name="q8" value="2" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Between 4-5 years</td>
         <td class="radio-container">
-          <input type="radio" name="q8" value="3" />
+          <label>
+            <input type="radio" name="q8" value="3" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Between 6-7 years</td>
         <td class="radio-container">
-          <input type="radio" name="q8" value="4" />
+          <label>
+            <input type="radio" name="q8" value="4" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
       <tr>
         <td>Longer than 7 years</td>
         <td class="radio-container">
-          <input type="radio" name="q8" value="5" />
+          <label>
+            <input type="radio" name="q8" value="5" />
+            <div class="radio"></div>
+          </label>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<script>
+  let isAllAnswered = true;
+  let totalScore = 0;
+  let chosenRisk = "<%- data.chosen %>";
+  if(chosenRisk){
+    document.querySelector(".chosen select").value = chosenRisk;
+  }
+  else{
+    document.querySelector(".chosen select").value = "";
+  }
+  let selectedAnswers = <%- JSON.stringify(data.riskPreference.answers) %>;
+  let questions = Object.keys(selectedAnswers);
+  questions.forEach((q, index) => {
+    let selectedAnswer = selectedAnswers[q];
+    if(selectedAnswer){
+      let element = document.querySelectorAll(`input[name=${q}]`)[selectedAnswer];
+      let value = parseInt(element.value);
+      totalScore +=value;
+      element.checked = true;
+    }
+    else{
+      isAllAnswered = false;
+    }
+  });
+
+  if(isAllAnswered){
+    document.querySelector("#risk-score").innerHTML = totalScore;
+    let riskName = "";
+    let riskDesc = "";
+    if(totalScore<14){
+      riskName = "Risk Averse";
+    } else if(totalScore<23) {
+      riskName = "Cautions";
+    } else if(totalScore<30) {
+      riskName = "Balanced";
+    } else {
+      riskName = "Adventurous";
+    }
+    document.querySelector("#risk-score-category").innerHTML = riskName;
+  }
+
+
+  document.querySelector(".chosen select").addEventListener("change",(event)=>{
+    let riskDesc = "";
+    console.log(event.target.value);
+      switch(event.target.value){
+        case "Risk Averse":
+          riskDesc = "You are conservative in your investments and prefer low risk product. You are not willing to accept some short term fluctuations in the value of your investments.";
+          break;
+        case "Cautions":
+          riskDesc = "You are willing to accept some short term fluctuations in the value of your investments over a medium to long investment term.";
+          break;
+        case "Balanced":
+          riskDesc = "You are willing to accept moderate short term fluctuations in the value of your investments over a medium to long term investment term.";
+          break;
+        case "Adventurous":
+          riskDesc = "You are willing to accept greater short term fluctuations in the value of your investments over a long investment term.";
+          break;
+      }
+      document.querySelector(".desc p").innerHTML = riskDesc;
+    });
+</script>

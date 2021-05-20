@@ -49,20 +49,14 @@
           <th>Category</th>
           <th>Amount</th>
         </thead>
+<% data.networth.personalAssets.forEach(personal => { %>
+  <tr>
+    <th><%= personal.category %> </th>
+    <td><%= personal.amount %></td>
+  </tr>
+<% }) %>
         <tr>
-          <th>Family Home</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Mtr Vehicles</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Home Content</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Others</th>
+          <th></th>
           <td></td>
         </tr>
         <tfoot>
@@ -78,16 +72,14 @@
           <th>Category</th>
           <th>Amount</th>
         </thead>
+        <% data.networth.cashEquivalents.forEach(cash => { %>
+          <tr>
+            <th><%= cash.category %> </th>
+            <td><%= cash.amount %></td>
+          </tr>
+        <% }) %>
         <tr>
-          <th>Saving Deposits</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Fixed Deposits</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Others</th>
+          <th></th>
           <td></td>
         </tr>
         <tfoot>
@@ -103,24 +95,14 @@
           <th>Category</th>
           <th>Amount</th>
         </thead>
+        <% data.networth.investedAssets.forEach(investment => { %>
+          <tr>
+            <th><%= investment.category %> </th>
+            <td><%= investment.amount %></td>
+          </tr>
+        <% }) %>
         <tr>
-          <th>Shares</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Managed Investments</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>TAP</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Invested Property</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Others</th>
+          <th></th>
           <td></td>
         </tr>
         <tfoot>
@@ -136,20 +118,13 @@
           <th>Category</th>
           <th>Amount</th>
         </thead>
-        <tr>
-          <th>Mortgage</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Personal/Credit</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Mtr Vehicles</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>Others</th>
+        <% data.networth.liabilities.forEach(liability => { %>
+          <tr>
+            <th><%= liability.category %> </th>
+            <td><%= liability.amount %></td>
+          </tr>
+        <% }) %>
+          <th></th>
           <td></td>
         </tr>
         <tfoot>

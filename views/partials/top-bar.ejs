@@ -1,7 +1,7 @@
 <div class="topbar">
   <div class="left-col">
     <h1 class="page-title"><%= title %></h1>
-    <h3 class="client-name"><%= clientName %></h3>
+    <h3><% if(locals.user){%><%=user.name%><%}%></h3>
   </div>
   <div class="right-col">
     <div class="nav-group utility">
@@ -19,7 +19,7 @@
       Setting
       <div class="nav-group-items">
         <a href="/setting/report" class="nav-item report">Report</a>
-        <a href="/setting/log-out" class="nav-item log-out">Logout</a>
+        <a href="/logout" class="nav-item log-out">Logout</a>
       </div>
     </div>
   </div>

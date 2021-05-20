@@ -9,7 +9,12 @@
         (Applicable only if the client consents to disclose all information.)
       </th>
       <td class="radio-container">
-        <input type="radio" name="all-info" value="true" />
+        <label>
+        <input type="radio" name="all-info" value="true" <% if (data.discloseAll) { %>
+         checked
+        <% } %> /> 
+      <div class="radio"></div>
+      </label>
       </td>
     </tr>
     <tr>
@@ -22,7 +27,13 @@
         only.)
       </th>
       <td class="radio-container">
-        <input type="radio" name="all-info" value="true" />
+        <label>
+          <input type="radio" name="all-info" value="true" <% if (!data.discloseAll) { %>
+            checked
+           <% } %>/>
+           <div class="radio"></div>
+        </label>
+
       </td>
     </tr>
   </table>
@@ -37,23 +48,23 @@
     </thead>
     <tr>
       <th>Title</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.title %></td>
+      <td><%= data.spouseDetail.title %></td>
     </tr>
     <tr>
       <th>Name</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.fullName %></td>
+      <td><%= data.spouseDetail.fullName %></td>
     </tr>
     <tr>
       <th>NRIC / Passport No.</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.IC %></td>
+      <td><%= data.spouseDetail.IC %></td>
     </tr>
     <tr>
       <th>D.O.B (DD/MM/YY)</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.DOB %></td>
+      <td><%= data.spouseDetail.DOB %></td>
     </tr>
     <tr>
       <th>Age (this year)</th>
@@ -62,58 +73,57 @@
     </tr>
     <tr>
       <th>Gender</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.gender %></td>
+      <td><%= data.spouseDetail.gender %></td>
     </tr>
     <tr>
       <th>Marital Status</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.maritalStatus %></td>
+      <td><%= data.spouseDetail.maritalStatus %></td>
     </tr>
     <tr>
       <th>Contact No.</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.contactNo %></td>
+      <td><%= data.spouseDetail.contactNo %></td>
     </tr>
     <tr>
       <th>Email</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.email %> </td>
+      <td><%= data.spouseDetail.email %></td>
     </tr>
     <tr>
       <th>Nationality</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.nationality %></td>
+      <td><%= data.spouseDetail.nationality %></td>
     </tr>
     <tr>
       <th>Race</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.race %> </td>
+      <td><%= data.spouseDetail.race %></td>
     </tr>
     <tr>
       <th>Address</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.address %> </td>
+      <td><%= data.spouseDetail.address %></td>
     </tr>
     <tr>
       <th>Property Type</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.propertyType %> </td>
+      <td><%= data.spouseDetail.propertyType %></td>
     </tr>
     <tr>
       <th>Home Ownership</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.homeOwnership %> </td>
+      <td><%= data.spouseDetail.homeOwnership %></td>
     </tr>
     <tr>
       <th>Education Level</th>
-      <td></td>
-      <td></td>
+      <td><%= data.clientDetail.educationLevel %> </td>
+      <td><%= data.spouseDetail.educationLevel %></td>
     </tr>
     <tr>
       <th>Occupation</th>
-      <td></td>
-      <td></td>
-    </tr>
+      <td><%= data.clientDetail.occupation %> </td>
+      <td><%= data.spouseDetail.occupation %></td>
   </table>
 </div>

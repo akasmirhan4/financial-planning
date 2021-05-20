@@ -10,11 +10,22 @@
       <th>Years to Support</th>
       <th>Income</th>
     </thead>
+    <% data.dependants.forEach(dependant => { %>
+    <tr>
+      <td><%= dependant.name %></td>
+      <td><%= dependant.relationship %></td>
+      <td><%= dependant.sex %></td>
+      <td class="uneditable"></td>
+      <td><%= dependant.age %></td>
+      <td><%= dependant.duration %></td>
+      <td><%= dependant.income %></td>
+    </tr>
+    <% }) %>
     <tr>
       <td></td>
       <td></td>
       <td></td>
-      <td class = "uneditable"></td>
+      <td class="uneditable"></td>
       <td></td>
       <td></td>
       <td></td>

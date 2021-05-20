@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <title>Login</title>
+    <!-- CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- GOOGLE LOGIN -->
+    <meta name="google-signin-scope" content="profile email" />
+    <meta
+      name="google-signin-client_id"
+      content="703685191309-mc19468ht0u6ukg8jcc179njvt8dto2g.apps.googleusercontent.com"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <div class="left-col">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.52 184.52">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #017769;
+                  }
+                  .cls-2 {
+                    fill: #f1e8db;
+                  }
+                </style>
+              </defs>
+              <path
+                class="cls-1"
+                d="M184.49,130.44c-.14-.55-8.49-35.35,0-76.36h0l0,0v0h0c-.48-.29-31-19-54-54V0h0V0c-.55.13-35.35,8.48-76.36,0V0l0,0h0V0c-.3.49-19,31-54,54H0v0l0,0H0c.13.55,8.48,35.35,0,76.36H0v0H0c.49.29,31,19,54,54v0h0l0,0v0c.55-.13,35.35-8.49,76.36,0v0h0v0c.29-.48,19-31,54-54h0v0h0Z"
+              />
+              <path
+                class="cls-2"
+                d="M50.46,88.12A8,8,0,0,1,54,83.87a10.78,10.78,0,0,1,5.46-1.41V91a8.91,8.91,0,0,0-6.22,1.42c-1.84,1.22-2.75,3.24-2.75,6.08v14.11H42.84V83.05h7.62Z"
+              />
+              <path
+                class="cls-2"
+                d="M69.17,100.94q1.55,5.55,8.33,5.55a7.78,7.78,0,0,0,6.61-3l6.14,3.55q-4.36,6.32-12.87,6.31-7.32,0-11.75-4.42a16.32,16.32,0,0,1-.06-22.29,15,15,0,0,1,11.22-4.46A14.06,14.06,0,0,1,87.5,86.71a15.56,15.56,0,0,1,4.23,11.1,17.67,17.67,0,0,1-.3,3.13ZM69.06,95h15a7.13,7.13,0,0,0-2.69-4.49,7.69,7.69,0,0,0-4.63-1.47,8,8,0,0,0-5.08,1.56A7.47,7.47,0,0,0,69.06,95Z"
+              />
+              <path class="cls-2" d="M97,112.57V69.47h7.61v43.1Z" />
+              <path
+                class="cls-2"
+                d="M134.06,83.05h7.61v29.52h-7.61v-3.49c-2.29,2.88-5.49,4.31-9.63,4.31a13.36,13.36,0,0,1-10.12-4.51,16.63,16.63,0,0,1,0-22.14,13.37,13.37,0,0,1,10.12-4.52,11.61,11.61,0,0,1,9.63,4.31ZM120,103.8a8.53,8.53,0,0,0,11.72,0,8.85,8.85,0,0,0,0-12,8.53,8.53,0,0,0-11.72,0,9,9,0,0,0,0,12Z"
+              />
+            </svg>
+          </div>
+          <h1>Rela Financial Review</h1>
+        </div>
+        <div class="right-col">
+          <h3>Made by <span>Amirrul Kasmirhan</span></h3>
+        </div>
+      </div>
+      <nav></nav>
+    </header>
+    <main>
+      <div class="login-container">
+        <h3>Sign In to Continue</h3>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </div>
+    </main>
+    <script>
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log("User signed out.");
+          // location.assign("/login");
+        });
+      }
+
+      function onSignIn(googleUser) {
+        var id_token = googleUser.getAuthResponse().id_token;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/login");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onload = function () {
+          if (xhr.responseText == "success") {
+            signOut();
+            location.assign("/agent-info");
+          }
+        };
+        xhr.send(JSON.stringify({ token: id_token }));
+      }
+    </script>
+  </body>
+</html>
